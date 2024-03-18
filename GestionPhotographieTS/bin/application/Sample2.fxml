@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <center>
+      <BorderPane prefHeight="830.0" prefWidth="1142.0" BorderPane.alignment="CENTER">
+         <top>
+            <BorderPane prefHeight="62.0" prefWidth="1142.0" style="-fx-background-color: #141414; -fx-border-color: #0D0D0D;" BorderPane.alignment="CENTER">
+               <left>
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="277.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button alignment="CENTER" graphicTextGap="3.0" mnemonicParsing="false" onAction="#NouvelleEntree" prefHeight="34.0" prefWidth="140.0" style="-fx-background-color: #0663E5; -fx-background-radius: 7;" text="Nouvelle Entrée  " textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <SVGPath content="M161.914-794.883H154v-4.172h7.914V-807h4.172v7.945H174v4.172h-7.914v7.914h-4.172Z" fill="#d6d6d6" scaleX="0.6" scaleY="0.6" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </left>
+               <center>
+                  <TextField fx:id="recherche" alignment="CENTER" prefHeight="44.0" prefWidth="738.0" promptText="Recherche par nom, prenom, date ou lieu..." style="-fx-background-color: #050505; -fx-border-color: #262626; -fx-background-radius: 10; -fx-border-radius: 10;" BorderPane.alignment="CENTER" />
+               </center>
+               <right>
+                  <HBox fx:id="loading" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="285.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="27.0">
+                           <image>
+                              <Image url="@../images/1490%20(1).gif" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="loadingText" text="Création du contrat en cours..." textFill="#a4a4a4" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </right>
+            </BorderPane>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <TabPane fx:id="tabpane" prefHeight="685.0" prefWidth="1142.0" style="-fx-background-color: #050505;" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                        <Tab text="Nouveau contrat">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #050505;">
+                                 <children>
+                                    <AnchorPane layoutX="15.5" layoutY="8.0" prefHeight="687.0" prefWidth="360.0" style="-fx-background-color: #050505; -fx-background-radius: 10; -fx-border-color: #262626; -fx-border-radius: 10;">
+                                       <children>
+                                          <Label layoutX="88.0" layoutY="60.0" prefHeight="24.0" prefWidth="243.0" text="Identité 1" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <GridPane hgap="10.0" layoutX="29.0" layoutY="123.0" prefHeight="258.0" prefWidth="320.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="nomMr" maxWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" />
+                                                <TextField fx:id="prenomMr" maxWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="adresseMr" maxWidth="200.0" prefHeight="27.0" prefWidth="192.0" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="lieunaissanceMr" maxWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="datenaissanceMr" maxWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Nom" textFill="#a4a4a4">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Date de Naissance" textFill="#a4a4a4" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Lieu de naissance" textFill="#a4a4a4" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Prenom" textFill="#a4a4a4" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Adresse" textFill="#a4a4a4" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                          <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="32.0" layoutY="51.0">
+                                             <image>
+                                                <Image url="@../images/Groupe%20275.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Circle fill="#0663e5" layoutX="67.0" layoutY="84.0" radius="6.0" stroke="#050505" strokeType="INSIDE" strokeWidth="2.0" />
+                                          <CheckBox layoutX="331.0" layoutY="14.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="3.0" textFill="#a4a4a4" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="391.0" layoutY="8.0" prefHeight="689.0" prefWidth="360.0" style="-fx-background-color: #050505; -fx-background-radius: 10; -fx-border-color: #262626; -fx-border-radius: 10;">
+                                       <children>
+                                          <Label layoutX="88.0" layoutY="60.0" prefHeight="24.0" prefWidth="243.0" text="Identité 2" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <GridPane hgap="10.0" layoutX="29.0" layoutY="123.0" prefHeight="258.0" prefWidth="311.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="nomMr2" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" />
+                                                <TextField fx:id="prenomMr1" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="adresseMr1" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="lieunaissanceMr1" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="datenaissanceMr1" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Nom" textFill="#a4a4a4">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Date de Naissance" textFill="#a4a4a4" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Lieu de naissance" textFill="#a4a4a4" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Prenom" textFill="#a4a4a4" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Adresse" textFill="#a4a4a4" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </GridPane>
+                                          <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="32.0" layoutY="51.0">
+                                             <image>
+                                                <Image url="@../images/Groupe%20275.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Circle fill="#b8147e" layoutX="66.0" layoutY="86.0" radius="6.0" stroke="#050505" strokeType="INSIDE" strokeWidth="2.0" />
+                                          <CheckBox layoutX="331.0" layoutY="12.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="3.0" textFill="#a4a4a4" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="766.5" layoutY="8.0" prefHeight="689.0" prefWidth="360.0" style="-fx-background-color: #050505; -fx-background-radius: 10; -fx-border-color: #262626; -fx-border-radius: 10;">
+                                       <children>
+                                          <Label layoutX="72.0" layoutY="56.0" prefHeight="24.0" prefWidth="268.0" text="Quelle est votre évenement ?" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <GridPane hgap="10.0" layoutX="29.0" layoutY="123.0" prefHeight="358.0" prefWidth="311.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="DATEMARIAGE" promptText="JJ/MM/AAAA" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" />
+                                                <Label text="Date de l'évenement" textFill="#a4a4a4">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Montant de la prestation" textFill="#a4a4a4" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="PRIXTTC" alignment="CENTER_RIGHT" promptText="700" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Montant de l'accompte" textFill="#a4a4a4" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="ACCOMPTTTC" alignment="CENTER_RIGHT" promptText="200" style="-fx-background-color: transparent; -fx-border-color: #171717; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="126.0" text="Accompte versé" textFill="#a4a4a4" GridPane.rowIndex="6" />
+                                                <RadioButton mnemonicParsing="false" selected="true" text="Complet" textFill="#a4a4a4" GridPane.rowIndex="1" />
+                                                <RadioButton mnemonicParsing="false" text="Réduit" textFill="#a4a4a4" GridPane.rowIndex="2" />
+                                                <RadioButton mnemonicParsing="false" text="Personnalisé" textFill="#a4a4a4" GridPane.rowIndex="3" />
+                                             </children>
+                                          </GridPane>
+                                          <TextField fx:id="adressemail" layoutX="23.0" layoutY="596.0" prefHeight="27.0" prefWidth="314.0" style="-fx-background-color: #262626; -fx-border-color: #262626; -fx-border-radius: 5;" />
+                                          <Label layoutX="25.0" layoutY="575.0" text="Adresse e-mail" textFill="#a4a4a4">
+                                             <font>
+                                                <Font name="Segoe UI" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Button alignment="CENTER" graphicTextGap="10.0" layoutX="25.0" layoutY="639.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="149.0" style="-fx-background-color: #0663E5; -fx-background-radius: 7;" text="Envoyer par mail" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="12.0" />
+                                             </font>
+                                             <graphic>
+                                                <SVGPath content="M121.606-863.94a1.546,1.546,0,0,1-1.134-.472,1.546,1.546,0,0,1-.472-1.134v-11.242a1.546,1.546,0,0,1,.472-1.134,1.546,1.546,0,0,1,1.134-.472h.8V-880h1.606v1.606h6.424V-880h1.606v1.606h.8a1.546,1.546,0,0,1,1.134.472,1.546,1.546,0,0,1,.472,1.134v11.242a1.546,1.546,0,0,1-.472,1.134,1.546,1.546,0,0,1-1.134.472Zm0-1.606h11.242v-8.03H121.606Zm0-9.636h11.242v-1.606H121.606Zm0,0v0Zm5.621,4.818a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,127.227-870.364Zm-3.212,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,124.015-870.364Zm6.424,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,130.439-870.364Zm-3.212,3.212a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,127.227-867.152Zm-3.212,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,124.015-867.152Zm6.424,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,130.439-867.152Z" fill="#565656" />
+                                             </graphic>
+                                          </Button>
+                                          <Button alignment="CENTER" graphicTextGap="10.0" layoutX="191.0" layoutY="639.0" mnemonicParsing="false" onAction="#EnregistrerContrat" prefHeight="36.0" prefWidth="149.0" style="-fx-background-color: #0663E5; -fx-background-radius: 7;" text="Enregistrer" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI Bold" size="12.0" />
+                                             </font>
+                                             <graphic>
+                                                <SVGPath content="M121.606-863.94a1.546,1.546,0,0,1-1.134-.472,1.546,1.546,0,0,1-.472-1.134v-11.242a1.546,1.546,0,0,1,.472-1.134,1.546,1.546,0,0,1,1.134-.472h.8V-880h1.606v1.606h6.424V-880h1.606v1.606h.8a1.546,1.546,0,0,1,1.134.472,1.546,1.546,0,0,1,.472,1.134v11.242a1.546,1.546,0,0,1-.472,1.134,1.546,1.546,0,0,1-1.134.472Zm0-1.606h11.242v-8.03H121.606Zm0-9.636h11.242v-1.606H121.606Zm0,0v0Zm5.621,4.818a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,127.227-870.364Zm-3.212,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,124.015-870.364Zm6.424,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,130.439-870.364Zm-3.212,3.212a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,127.227-867.152Zm-3.212,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,124.015-867.152Zm6.424,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,130.439-867.152Z" fill="#565656" />
+                                             </graphic>
+                                          </Button>
+                                          <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="23.0" layoutY="48.0">
+                                             <image>
+                                                <Image url="@../images/Groupe%20280.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                      <Tab text="Planning" />
+                      <Tab text="Contrats">
+                           <content>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <top>
+                                    <TableView fx:id="contrattableview" prefHeight="309.0" prefWidth="1112.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="fileNameCol" prefWidth="608.0" style="-fx-text-fill: #a4a4a4;" text="Nom" />
+                                        <TableColumn fx:id="lastModifiedCol" prefWidth="322.0" style="-fx-text-fill: #a4a4a4;" text="Modifié le" />
+                                          <TableColumn fx:id="statusCol" minWidth="0.0" prefWidth="154.0" style="-fx-text-fill: #a4a4a4;" text="Status" />
+                                      </columns>
+                                       <BorderPane.margin>
+                                          <Insets left="15.0" right="15.0" />
+                                       </BorderPane.margin>
+                                    </TableView>
+                                 </top>
+                                 <center>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </center>
+                                 <bottom>
+                                    <BorderPane prefHeight="73.0" prefWidth="1142.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                              </BorderPane>
+                           </content>
+                      </Tab>
+                        <Tab text="Comptabilité">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                        <Tab text="Rapports">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                        <Tab text="Clients">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </center>
+               <top>
+                  <BorderPane prefHeight="49.0" prefWidth="1142.0" style="-fx-background-color: #0D0D0D;" BorderPane.alignment="CENTER">
+                     <right>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="refresh" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#refresh" prefHeight="36.0" prefWidth="32.0" style="-fx-background-color: Transparent;" textFill="#565656">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <SVGPath content="M168.265-783.47a7.977,7.977,0,0,1-5.863-2.4,7.977,7.977,0,0,1-2.4-5.863,7.977,7.977,0,0,1,2.4-5.863,7.977,7.977,0,0,1,5.863-2.4,8.18,8.18,0,0,1,3.409.736,7.875,7.875,0,0,1,2.789,2.1V-800h2.066v7.232H169.3v-2.066h4.339a6.03,6.03,0,0,0-2.26-2.273,6.124,6.124,0,0,0-3.112-.826,5.978,5.978,0,0,0-4.391,1.808,5.978,5.978,0,0,0-1.808,4.391,5.978,5.978,0,0,0,1.808,4.391,5.978,5.978,0,0,0,4.391,1.808,6.057,6.057,0,0,0,3.59-1.136,6,6,0,0,0,2.247-3h2.17a8.157,8.157,0,0,1-2.944,4.468A8.016,8.016,0,0,1,168.265-783.47Z" fill="#d6d6d6" />
+                                 </graphic>
+                              </Button>
+                              <StackPane prefHeight="49.0" prefWidth="39.0">
+                                 <children>
+                                    <SVGPath content="M180-842.9v-1.565h1.887v-7.788a5.776,5.776,0,0,1,1.3-3.723,5.759,5.759,0,0,1,3.337-2.069v-.65a1.259,1.259,0,0,1,.38-.924,1.256,1.256,0,0,1,.923-.38,1.26,1.26,0,0,1,.924.38,1.257,1.257,0,0,1,.381.924v.65a5.759,5.759,0,0,1,3.337,2.069,5.776,5.776,0,0,1,1.3,3.723v7.788h1.887v1.565ZM187.829-850.546Zm0,10.577a1.813,1.813,0,0,1-1.332-.554,1.819,1.819,0,0,1-.553-1.332h3.773a1.815,1.815,0,0,1-.555,1.334A1.821,1.821,0,0,1,187.827-839.968Zm-4.374-4.5H192.2v-7.788a4.216,4.216,0,0,0-1.282-3.094,4.216,4.216,0,0,0-3.094-1.282,4.216,4.216,0,0,0-3.094,1.282,4.216,4.216,0,0,0-1.282,3.094Z" fill="#d6d6d6" />
+                                    <Circle fill="#bc1111" radius="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" translateX="4.0" translateY="-8.0" />
+                                 </children>
+                              </StackPane>
+                              <Label fx:id="currentdate" text="currentdate" textFill="#a4a4a4">
+                                 <font>
+                                    <Font name="Segoe UI" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <BorderPane.margin>
+                              <Insets right="15.0" />
+                           </BorderPane.margin>
+                        </HBox>
+                     </right>
+                     <center>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Volet de contrôle" textFill="#a4a4a4">
+                                 <font>
+                                    <Font name="Segoe UI" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="voletInfos" text="Gestion de Contrats" textFill="#a4a4a4">
+                                 <font>
+                                    <Font name="Segoe UI" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </center>
+                     <left>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="32.0" style="-fx-background-color: Transparent;" textFill="#565656">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <SVGPath content="M328.265-703.47,320-711.735,328.265-720l1.928,1.928-6.336,6.336,6.336,6.336M328.265-703.47,320-711.735,328.265-720l1.928,1.928-6.336,6.336,6.336,6.336Z" fill="#d6d6d6" />
+                                 </graphic>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="32.0" style="-fx-background-color: Transparent;" textFill="#565656">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <SVGPath content="M326.336-711.735,320-718.072,321.928-720l8.265,8.265-8.265,8.265L320-705.4M326.336-711.735,320-718.072,321.928-720l8.265,8.265-8.265,8.265L320-705.4Z" fill="#d6d6d6" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="10.0" />
+                           </BorderPane.margin>
+                        </HBox>
+                     </left></BorderPane>
+               </top>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </center>
+   <left>
+      <BorderPane prefHeight="830.0" prefWidth="60.0" style="-fx-background-color: #141414;" BorderPane.alignment="CENTER">
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="828.0" prefWidth="129.0" spacing="8.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0">
+                     <image>
+                        <Image url="@../images/logoTSWhite.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="21.0" styleClass="sidebutton" stylesheets="@application.css" textFill="#d6d6d6">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <SVGPath content="M121.606-863.94a1.546,1.546,0,0,1-1.134-.472,1.546,1.546,0,0,1-.472-1.134v-11.242a1.546,1.546,0,0,1,.472-1.134,1.546,1.546,0,0,1,1.134-.472h.8V-880h1.606v1.606h6.424V-880h1.606v1.606h.8a1.546,1.546,0,0,1,1.134.472,1.546,1.546,0,0,1,.472,1.134v11.242a1.546,1.546,0,0,1-.472,1.134,1.546,1.546,0,0,1-1.134.472Zm0-1.606h11.242v-8.03H121.606Zm0-9.636h11.242v-1.606H121.606Zm0,0v0Zm5.621,4.818a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,127.227-870.364Zm-3.212,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,124.015-870.364Zm6.424,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,130.439-870.364Zm-3.212,3.212a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,127.227-867.152Zm-3.212,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,124.015-867.152Zm6.424,0a.777.777,0,0,1-.572-.231.777.777,0,0,1-.231-.572.777.777,0,0,1,.231-.572.777.777,0,0,1,.572-.231.777.777,0,0,1,.572.231.777.777,0,0,1,.231.572.777.777,0,0,1-.231.572A.777.777,0,0,1,130.439-867.152Z" fill="#d6d6d6" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#contratTab" prefHeight="36.0" prefWidth="30.0" styleClass="sidebutton" stylesheets="@application.css" textFill="#d6d6d6">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <SVGPath content="M122.409-863.94a2.323,2.323,0,0,1-1.706-.7,2.323,2.323,0,0,1-.7-1.706v-2.409h2.409V-880h12.045v13.651a2.323,2.323,0,0,1-.7,1.706,2.323,2.323,0,0,1-1.706.7Zm9.636-1.606a.777.777,0,0,0,.572-.231.777.777,0,0,0,.231-.572v-12.045h-8.833v9.636h7.227v2.409a.777.777,0,0,0,.231.572A.777.777,0,0,0,132.045-865.546Zm-7.227-8.833v-1.606h7.227v1.606Zm0,2.409v-1.606h7.227v1.606Zm-2.409,6.424h7.227v-1.606h-8.03v.8a.777.777,0,0,0,.231.572A.777.777,0,0,0,122.409-865.546Zm0,0h0Z" fill="#d6d6d6" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="32.0" styleClass="sidebutton" stylesheets="@application.css" textFill="#565656">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <SVGPath content="M50.439-792.773a2.323,2.323,0,0,1-1.706-.7,2.323,2.323,0,0,1-.7-1.706,2.323,2.323,0,0,1,.7-1.706,2.323,2.323,0,0,1,1.706-.7,2.323,2.323,0,0,1,1.706.7,2.323,2.323,0,0,1,.7,1.706,2.323,2.323,0,0,1-.7,1.706A2.323,2.323,0,0,1,50.439-792.773Zm-5.621,2.409a1.547,1.547,0,0,1-1.134-.472,1.547,1.547,0,0,1-.472-1.134v-6.424a1.546,1.546,0,0,1,.472-1.134A1.546,1.546,0,0,1,44.818-800H56.06a1.546,1.546,0,0,1,1.134.472,1.546,1.546,0,0,1,.472,1.134v6.424a1.547,1.547,0,0,1-.472,1.134,1.547,1.547,0,0,1-1.134.472Zm1.606-1.606h8.03a1.546,1.546,0,0,1,.472-1.134,1.546,1.546,0,0,1,1.134-.472v-3.212a1.547,1.547,0,0,1-1.134-.472,1.547,1.547,0,0,1-.472-1.134h-8.03a1.547,1.547,0,0,1-.472,1.134,1.547,1.547,0,0,1-1.134.472v3.212a1.546,1.546,0,0,1,1.134.472A1.546,1.546,0,0,1,46.424-791.97Zm8.833,4.818H41.606a1.546,1.546,0,0,1-1.134-.472A1.546,1.546,0,0,1,40-788.758v-8.833h1.606v8.833H55.257ZM44.818-791.97v0Z" fill="#d6d6d6" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="0.0" styleClass="sidebutton" stylesheets="@application.css" textFill="#565656">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <SVGPath content="M120-823.94v-1.784l1.784-1.784v3.569Zm3.569,0v-5.353l1.784-1.784v7.138Zm3.569,0v-7.138l1.784,1.807v5.331Zm3.569,0v-5.331l1.784-1.784v7.115Zm3.569,0v-8.922l1.784-1.784v10.706ZM120-828.557v-2.521l6.245-6.245,3.569,3.569L136.06-840v2.52l-6.245,6.245-3.569-3.569Z" fill="#d6d6d6" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="19.0" styleClass="sidebutton" stylesheets="@application.css" textFill="#565656">
+                     <font>
+                        <Font name="Segoe UI Semibold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <SVGPath content="M0-710.364v-1.265a1.609,1.609,0,0,1,.883-1.405,4.41,4.41,0,0,1,2.329-.542q.261,0,.5.01a3.361,3.361,0,0,1,.462.05,3.34,3.34,0,0,0-.422.883,3.29,3.29,0,0,0-.141.964v1.3Zm4.818,0v-1.3a2.086,2.086,0,0,1,.351-1.174,3.188,3.188,0,0,1,.994-.933,4.911,4.911,0,0,1,1.536-.6,8.833,8.833,0,0,1,1.937-.2,8.932,8.932,0,0,1,1.957.2,4.911,4.911,0,0,1,1.536.6,3.077,3.077,0,0,1,.984.933,2.13,2.13,0,0,1,.341,1.174v1.3Zm10.84,0v-1.3a3.6,3.6,0,0,0-.13-.984,3.143,3.143,0,0,0-.391-.863,3.33,3.33,0,0,1,.452-.05q.231-.01.472-.01a4.477,4.477,0,0,1,2.329.532,1.6,1.6,0,0,1,.883,1.415v1.265ZM6.524-711.97h6.243a1.847,1.847,0,0,0-1.114-.7,6.414,6.414,0,0,0-2.017-.3,6.414,6.414,0,0,0-2.017.3Q6.7-712.372,6.524-711.97Zm-3.312-2.409a1.547,1.547,0,0,1-1.134-.472,1.547,1.547,0,0,1-.472-1.134,1.537,1.537,0,0,1,.472-1.144,1.563,1.563,0,0,1,1.134-.462,1.554,1.554,0,0,1,1.144.462,1.554,1.554,0,0,1,.462,1.144,1.564,1.564,0,0,1-.462,1.134A1.537,1.537,0,0,1,3.212-714.379Zm12.848,0a1.547,1.547,0,0,1-1.134-.472,1.547,1.547,0,0,1-.472-1.134,1.537,1.537,0,0,1,.472-1.144,1.563,1.563,0,0,1,1.134-.462,1.554,1.554,0,0,1,1.144.462,1.554,1.554,0,0,1,.462,1.144,1.564,1.564,0,0,1-.462,1.134A1.537,1.537,0,0,1,16.06-714.379Zm-6.424-.8a2.323,2.323,0,0,1-1.706-.7,2.323,2.323,0,0,1-.7-1.706,2.314,2.314,0,0,1,.7-1.716A2.34,2.34,0,0,1,9.636-720a2.331,2.331,0,0,1,1.716.693,2.331,2.331,0,0,1,.693,1.716,2.34,2.34,0,0,1-.693,1.706A2.314,2.314,0,0,1,9.636-715.182Zm0-1.606a.777.777,0,0,0,.572-.231.777.777,0,0,0,.231-.572.777.777,0,0,0-.231-.572.777.777,0,0,0-.572-.231.777.777,0,0,0-.572.231.777.777,0,0,0-.231.572.777.777,0,0,0,.231.572A.777.777,0,0,0,9.636-716.788ZM9.656-711.97ZM9.636-717.591Z" fill="#d6d6d6" />
+                     </graphic>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </left>
+</BorderPane>
